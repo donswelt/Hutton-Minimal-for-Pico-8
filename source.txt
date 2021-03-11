@@ -294,6 +294,9 @@
 	   if distance<0 then
 	    distance=0
 	   end
+    if distance==9 then
+     distzero="0"
+    end
 	   if distance==1 and alert==0 then
 	    music(0)
      music(-1,30000)
@@ -421,7 +424,7 @@
 	
   -- the osd
 	 print("distance to",hcenter("distance to"),5,12)
-	 print("hutton minimal: 0."..distance.." ly",hcenter("hutton minimal: 0."..distance.." ly"),13,12)
+	 print("hutton minimal: 0."..distzero..""..distance.." ly",hcenter("hutton minimal: 0."..distzero..""..distance.." ly"),13,12)
 	 print("cargo: "..cargo,hcenter("cargo: "..cargo),118,12)
 
 	 -- erm, you missed the exit
@@ -455,7 +458,7 @@
   print("you are a space\ntrucker and all\nyou need to do\nis fly to\nhutton minimal\nand deliver your\ncargo. it's a\nlong way.\n\ncontrols:\n❎ to turn\nthrusters on/off",32,23,7)
  
   print("press ❎ to continue",hcenter("press ❎ to continue")-2,110+pressfire,9)
-  print("v1.0",109,119,1)
+  print("v1.1",109,119,1)
  	
  end
  
@@ -571,6 +574,7 @@ end
   speed=0
   thrust=0
   cruising=0
+  distzero=""
   maxthrust=20
   distance=22
   travelfactor=2000
